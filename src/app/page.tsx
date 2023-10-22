@@ -21,9 +21,12 @@ export default function Home() {
                   height={180}
                   priority
                 />
+                  <p className={styles.description}>
+                      🚧Site en construction
+                  </p>
               </div>
-              <Button type="primary">Nous contacter</Button>
               <div className={styles.grid}>
+                  <Button type="primary">Nous contacter</Button>
               </div>
             </main>
         </ConfigProvider>
