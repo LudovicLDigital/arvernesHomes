@@ -1,8 +1,10 @@
-import Image from 'next/image'
+'use client';
 import styles from './page.module.css'
-import { Button, ConfigProvider } from 'antd';
+import { ConfigProvider } from 'antd';
+import WipHome from "@/app/components/WipHome";
 
 export default function Home() {
+
   return (
       <ConfigProvider
           theme={{
@@ -12,22 +14,7 @@ export default function Home() {
           }}
       >
             <main className={styles.main}>
-              <div className={styles.center}>
-                <Image
-                  className={styles.logo}
-                  src="/logo.png"
-                  alt="Arvernes Homes Logo"
-                  width={180}
-                  height={180}
-                  priority
-                />
-                  <p className={styles.description}>
-                      🚧Site en construction
-                  </p>
-              </div>
-              <div className={styles.grid}>
-                  <Button type="primary">Nous contacter</Button>
-              </div>
+                <WipHome />
             </main>
         </ConfigProvider>
   )
