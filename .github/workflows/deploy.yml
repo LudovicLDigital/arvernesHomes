@@ -21,8 +21,13 @@ jobs:
 
       - name: Build
         run: npm run build
-      - name: List files
+
+      - name: Export
+        run: npm run export
+
+      - name: List files after export
         run: ls -la
+
       - name: FTP Deploy
         run: node deploy.js
         env:
