@@ -11,7 +11,7 @@ const nextConfig = {
     distDir: 'build',
     images: {
         loader: 'custom',
-        path: '/',
+        loaderFile: './hostingerImages.ts',
     },
 }
 
