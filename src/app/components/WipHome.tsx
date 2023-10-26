@@ -14,6 +14,7 @@ export default function WipHome() {
                     width={180}
                     height={180}
                     priority
+                    unoptimized={true}
                 />
                 <p className={styles.description}>
                     🚧Site en construction
