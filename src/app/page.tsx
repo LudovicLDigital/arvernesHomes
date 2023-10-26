@@ -1,7 +1,8 @@
 'use client';
 import styles from './page.module.css'
 import { ConfigProvider } from 'antd';
-import WipHome from "@/app/components/WipHome";
+import DataSection from "@/app/components/DataSection/DataSection";
+import BannerSection from "@/app/components/BannerSection/BannerSection";
 
 export default function Home() {
 
@@ -14,7 +15,8 @@ export default function Home() {
           }}
       >
             <main className={styles.main}>
-                <WipHome />
+                <BannerSection />
+                <DataSection />
             </main>
         </ConfigProvider>
   )

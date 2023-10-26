@@ -1,0 +1,9 @@
+.bannerSection {
+    flex: 2;
+    background: url("../../../../public/banner.png") no-repeat center fixed;
+    background-size: cover;
+}
+.logo {
+    width: 13rem;
+    height: 13rem;
+}

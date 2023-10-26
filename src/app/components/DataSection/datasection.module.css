@@ -1,0 +1,4 @@
+.dataSection {
+    flex: 1;
+    background: var(--primary-rgba);
+}

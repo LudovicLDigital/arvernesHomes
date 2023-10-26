@@ -9,7 +9,9 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 
-  --primary: #43A047;
+  --primary: #43A047FF;
+  --primary-rgb: 67, 160, 71;
+  --primary-rgba: rgba(67, 160, 71, 0.3);
   --secondary: rgb(4, 19, 36);
 
   --tile-start-rgb: 239, 245, 249;
@@ -26,7 +28,7 @@
 
   --callout-rgb: 238, 240, 241;
   --callout-border-rgb: 172, 175, 176;
-  --card-rgb: 180, 185, 188;
+  --card: rgb(255, 255, 255);
   --card-border-rgb: 131, 134, 135;
 }
 

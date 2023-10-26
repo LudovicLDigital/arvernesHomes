@@ -9,10 +9,6 @@ const nextConfig = {
 
     // Optional: Change the output directory `out` -> `dist`
     distDir: 'build',
-    images: {
-        loader: 'custom',
-        loaderFile: './hostingerImages.ts',
-    },
 }
 
 module.exports = nextConfig
