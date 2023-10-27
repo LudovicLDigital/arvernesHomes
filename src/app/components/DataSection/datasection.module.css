@@ -1,4 +1,58 @@
 .dataSection {
+    display: flex;
     flex: 1;
     background: var(--primary-rgba);
+}
+.cardDisplayer {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.titles {
+    margin-bottom: 0.5em;
+    text-align: center;
+}
+.subTitle {
+    text-align: center;
+}
+.lcdPart {
+    display: flex;
+    flex: 2;
+    flex-direction: row;
+}
+.bubbles {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.bubble {
+    display: flex;
+    height: 5em;
+    width: 5em;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary);
+    border-radius: 50rem;
+}
+.bubble span {
+    color: #FFC700;
+}
+.bubble p {
+    color: white;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+.bubbleLegend {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    font-weight: bold;
+    margin-top: 0.5em;
 }
