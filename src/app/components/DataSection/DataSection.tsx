@@ -1,74 +1,89 @@
 import styles from "./datasection.module.css";
 import global from "@/app/page.module.css";
-import {Badge, Divider} from "antd";
+import {Badge, Col, theme, Row} from "antd";
 import {StarFilled} from "@ant-design/icons";
+import {Bubble, homeData} from "@/app/datas/HomeData";
 
+const { useToken } = theme;
+type BubbleProps = {
+    bubble: Bubble
+}
+
+function Bubble(props: BubbleProps) {
+    const { bubble } = props;
+    return (
+        <div className={styles.bubbleContainer}>
+            <div className={styles.bubble}>
+                {bubble.star && <StarFilled />}
+                <p>{bubble.text}</p>
+            </div>
+            <span className={styles.bubbleLegend}>{bubble.legend}</span>
+        </div>
+    )
+}
 export default function DataSection() {
-    const advantages = [
-        "Ménage régulier garantissant un logement de qualité",
-        "Interventions rapide sur les petites réparations et besoin de maintenance",
-        "Aucun risque d’impayés"
-    ];
-    const bubbles = [
-        {
-            star: true,
-            text: "4,83",
-            legend: "Airbnb"
-        },
-        {
-            star: false,
-            text: "86 %",
-            legend: "d’occupation"
-        },
-        {
-            star: true,
-            text: "9,4",
-            legend: "Booking"
-        },
-        {
-            star: false,
-            text: "25 %",
-            legend: "De commission ( hors ménage )"
-        }
-    ]
+    const { token } = useToken();
+
     return (
         <div className={`${global.center} ${styles.dataSection}`}>
-            <div className={`${global.card} ${styles.cardDisplayer}`}>
-                <div>
-                    <h3 className={styles.titles}>Maximiser vos gains avec la location courte durée</h3>
-                    <h5 className={styles.subTitle}>Pour un T2 de 30m2 :</h5>
-                    <div className={styles.lcdPart}>
-                        <div className={styles.revenusContainer}>
-                            <p>Location Meublé Classique : </p>
-                            <span>500 € / Mois</span>
-                            <p>Location Courte Durée :</p>
-                            <span>1236 € / Mois</span>
-                            <p>Le mois le plus rentable : Août 2023 avec <span>1970 €</span></p>
-                            <p>Et le moins rentable : Février 2023 avec <span>702 €</span></p>
-                        </div>
-                        <div className={styles.advantagesContainer}>
-                            <p>Les avantages : </p>
-                            {advantages.map((advantage, index) => (
-                                <Badge key={index} color={`var(--primary)`} text={advantage}/>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-                <Divider type="vertical" />
-                <div>
-                    <h3 className={styles.titles}>Nos prestations ?</h3>
-                    <div className={styles.bubbles}>
-                        {bubbles.map((bubble, index) => (
-                            <div key={index}>
-                                <div className={styles.bubble}>
-                                    {bubble.star && <StarFilled />}
-                                    <p>{bubble.text}</p>
-                                </div>
-                                <span className={styles.bubbleLegend}>{bubble.legend}</span>
+            <div className={`${global.card} ${styles.cardContainer}`}>
+                <div className={`${styles.cardDisplayer}`}>
+                    <div className={styles.left}>
+                        <h3 className={styles.titles}>{homeData.leftTitle}</h3>
+                        <h5 className={styles.subTitle}>{homeData.leftSubtitle}</h5>
+                        <div className={styles.lcdPart}>
+                            <div className={styles.revenusContainer}>
+                                <p>{homeData.classicRentTitle}</p>
+                                <span >{homeData.classicRentValue} € / Mois</span>
+                                <p>{homeData.lcdRentTitle}</p>
+                                <span style={{
+                                    color: token.colorPrimary
+                                }}>
+                                    {homeData.lcdRentValue} € / Mois
+                                </span>
+                                <p>{homeData.highestMonthRevenueTitle}
+                                    <span style={{
+                                        color: token.colorPrimary
+                                    }}>
+                                        {homeData.highestMonthRevenueValue} €
+                                    </span>
+                                </p>
+                                <p>{homeData.lowestMonthRevenueTitle}
+                                    <span style={{
+                                    color: token.colorPrimary
+                                    }}>
+                                        {homeData.lowestMonthRevenueValue} €
+                                    </span>
+                                </p>
                             </div>
-                        ))}
+                            <div className={styles.advantagesContainer}>
+                                <p>{homeData.advantageTitle}</p>
+                                {homeData.advantage.map((advantage, index) => (
+                                    <Badge color={token.colorPrimary} className={styles.badges} key={index} text={advantage}/>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                    <div className={styles.divider}></div>
+                    <div className={styles.right}>
+                        <h3 className={styles.titles}>{homeData.rightSideTitle}</h3>
+                        <Row justify={"space-between"} >
+                            {homeData.bubbles.slice(0, 3).map((bubble, index) => (
+                                <Col key={index} span={8}>
+                                    <Bubble key={index} bubble={bubble} />
+                                </Col>
+                            ))}
+                        </Row>
+                        <Row justify={"center"} className={styles.comRow}>
+                            <Col  span={16}>
+                                <Bubble bubble={homeData.bubbles[3]} />
+                            </Col>
+                        </Row>
                     </div>
                 </div>
+                <p className={styles.sourceText}>
+                    {homeData.dataSourceText}
+                </p>
             </div>
         </div>
     )
