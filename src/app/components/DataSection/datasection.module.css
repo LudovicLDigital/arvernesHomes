@@ -1,4 +1,162 @@
 .dataSection {
-    flex: 1;
+    display: flex;
     background: var(--primary-rgba);
+    padding-bottom: 2rem;
+    margin-top: -2rem;
+}
+.cardContainer {
+    display: flex;
+    flex: 1;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    flex-direction: column;
+}
+.cardDisplayer {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+}
+.left {
+    display: flex;
+    flex: 2;
+    flex-direction: column;
+}
+.revenusContainer {
+    display: flex;
+    flex: 2;
+    flex-direction: column;
+}
+.revenusContainer p {
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+.revenusContainer span {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 1rem;
+}
+.advantagesContainer {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+.advantagesContainer p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+.badges {
+    margin-top: 0.8rem;
+}
+.right {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+}
+.divider {
+    width: 1px;
+    background-color: black;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+.titles {
+    margin-bottom: 0.5em;
+    text-align: center;
+}
+.subTitle {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.lcdPart {
+    display: flex;
+    flex: 2;
+    flex-direction: row;
+}
+.statPart {
+    display: flex;
+    flex: 3;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.bubbleContainer {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.bubble {
+    display: flex;
+    height: 5em;
+    width: 5em;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary);
+    border-radius: 50rem;
+}
+.bubble:hover {
+    animation: bounce 1s;
+}
+.bubble span {
+    color: #FFC700;
+}
+.bubble p {
+    color: white;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+.bubbleLegend {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    font-weight: bold;
+    margin-top: 0.5em;
+}
+.comRow {
+    margin-top: 1.5em;
+}
+.sourceText {
+    font-size: 0.7rem;
+    font-style: italic;
+    margin-top: 2rem;
+}
+@media (max-width: 900px) {
+
+    .cardDisplayer {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+    }
+
+    .lcdPart {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+    }
+    .divider {
+        display: none;
+    }
+    .right {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .advantagesContainer p {
+        margin-top: 2rem;
+    }
+}
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-15px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
 }
