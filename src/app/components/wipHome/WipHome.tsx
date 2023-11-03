@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { Button } from 'antd';
 import styles from './wiphome.module.css';
 import global from '@/app/page.module.css';
