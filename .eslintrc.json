@@ -1,3 +1,23 @@
 {
-  "extends": "next/core-web-vitals"
+  "plugins": ["@typescript-eslint"],
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "rules": {
+    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/no-explicit-any": "error",
+
+    // Limiter la longueur des lignes à 80 caractères (modifiable selon vos préférences)
+    "max-len": ["error", { "code": 80, "ignoreUrls": true, "ignoreStrings": true, "ignoreTemplateLiterals": true, "ignoreComments": true }],
+
+    // Encourager l'utilisation de retours à la ligne pour une meilleure lisibilité
+    "object-curly-newline": ["error", { "consistent": true }],
+    "function-paren-newline": ["error", "multiline-arguments"],
+    "newline-per-chained-call": ["error", { "ignoreChainWithDepth": 2 }],
+
+    // Limiter la profondeur des callbacks
+    "max-nested-callbacks": ["error", { "max": 3 }]
+  }
 }

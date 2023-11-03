@@ -3,6 +3,8 @@
     background: url("../../../../public/banner.png") no-repeat center fixed;
     background-size: cover;
     padding: 4rem;
+    border-bottom-left-radius: 4em;
+    border-bottom-right-radius: 4em;
 }
 .logo {
     width: 13rem;

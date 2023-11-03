@@ -1,0 +1,12 @@
+.section {
+    display: flex;
+    padding-bottom: 2rem;
+}
+
+.cardContainer {
+    display: flex;
+    flex: 1;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    flex-direction: column;
+}
