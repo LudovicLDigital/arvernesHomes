@@ -1,9 +1,8 @@
 import { theme } from 'antd';
 import Card from '@/app/components/common/Card';
 import Image from 'next/image';
-import styles from './serviceSection.module.css';
+import styles from './servicesection.module.css';
 import global from '@/app/page.module.css';
-import { CSSProperties } from 'react';
 
 const { useToken } = theme;
 
