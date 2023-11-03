@@ -18,18 +18,10 @@
   transition: background 200ms, border 200ms;
 }
 
-.description {
-  display: inherit;
-  justify-content: inherit;
-  align-items: inherit;
-  font-size: 0.85rem;
-  max-width: var(--max-width);
-  color: var(--secondary);
-  width: 100%;
-  z-index: 2;
-  font-family: var(--font-mono);
+.sectionTitle {
+  font-weight: bold;
+  font-size: 1.5rem;
 }
-
 /* Mobile */
 @media (max-width: 900px) {
 }
