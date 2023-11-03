@@ -2,9 +2,9 @@
     display: flex;
     flex: 1;
     flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
+    align-items: flex-start;
 }
+
 .alignCenter {
     display: flex;
     flex: 1;
@@ -14,6 +14,23 @@
 .marginH {
     margin-left: 1rem;
     margin-right: 1rem;
+    align-self: stretch;
+}
+.highlightText {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.comText {
+    text-align: center;
+    justify-content: flex-end;
+    padding-bottom: 2rem;
+    width: 80%;
+}
+.divider {
+    width: 1px;
+    align-self: stretch;
+    background-color: var(--secondary);
+    margin: 1rem;
 }
 @media (max-width: 900px) {
     .servicesContainer {
@@ -22,4 +39,31 @@
     .marginH {
         margin-top: 1rem;
     }
+    .divider {
+        display: none;
+    }
 }
+.displayWithFade1, .displayWithFade2, .displayWithFade3 {
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+.displayWithFade1 {
+    animation-delay: 0.5s;
+}
+.displayWithFade2 {
+    animation-delay: 1s;
+}
+.displayWithFade3 {
+    animation-delay: 1.5s;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+

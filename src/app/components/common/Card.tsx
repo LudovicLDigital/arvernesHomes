@@ -1,20 +1,30 @@
 import global from '@/app/page.module.css';
 import styles from './card.module.css';
+import { CSSProperties } from 'react';
+
 type CardProps = {
   children: React.ReactNode;
-  marginTopPositionIgnored?: boolean;
+  containerStyle?: CSSProperties | undefined;
+  cardStyle?: CSSProperties | undefined;
 };
 export default function Card(props: CardProps) {
-  const { children, marginTopPositionIgnored } = props;
+  const { children, cardStyle, containerStyle } = props;
 
   return (
     <div
       className={`${global.center} ${styles.section}`}
       style={{
-        marginTop: marginTopPositionIgnored ? 0 : '-2rem',
+        ...containerStyle,
       }}
     >
-      <div className={`${global.card} ${styles.cardContainer}`}>{children}</div>
+      <div
+        className={`${global.card} ${styles.cardContainer}`}
+        style={{
+          ...cardStyle,
+        }}
+      >
+        {children}
+      </div>
     </div>
   );
 }

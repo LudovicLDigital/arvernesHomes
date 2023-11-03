@@ -2,6 +2,8 @@ import { theme } from 'antd';
 import Card from '@/app/components/common/Card';
 import Image from 'next/image';
 import styles from './serviceSection.module.css';
+import global from '@/app/page.module.css';
+import { CSSProperties } from 'react';
 
 const { useToken } = theme;
 
@@ -11,41 +13,53 @@ type ServiceItemProps = {
   image: string;
   highlightCtaTextIndex: number;
   ctaText: string[];
+  className?: string;
 };
 
 function ServiceItem(props: ServiceItemProps) {
   const { token } = useToken();
   const descriptionSplitted = props.description.split('\n');
   return (
-    <div className={`${styles.alignCenter} ${styles.marginH}`}>
-      <div className={styles.alignCenter}>
-        <Image
-          src={props.image}
-          alt={props.title}
-          width={60}
-          height={60}
-          priority
-          unoptimized={true}
-        />
-        <h3>{props.title}</h3>
+    <>
+      {props.title !== 'Gestion complète' && <div className={styles.divider} />}
+      <div
+        className={`${styles.alignCenter} ${styles.marginH} ${props.className}`}
+      >
+        <div className={styles.alignCenter}>
+          <Image
+            src={props.image}
+            alt={props.title}
+            width={120}
+            height={120}
+            priority
+            unoptimized={true}
+          />
+          <h3>{props.title}</h3>
+        </div>
+        <div>
+          {descriptionSplitted.map((element, index) => {
+            return <p key={index}>{element}</p>;
+          })}
+        </div>
+        <span className={`${styles.alignCenter} ${styles.comText}`}>
+          {props.ctaText.map((text, index) => {
+            if (index === props.highlightCtaTextIndex) {
+              return (
+                <span
+                  key={index}
+                  style={{ color: token.colorPrimary }}
+                  className={styles.highlightText}
+                >
+                  {text}
+                </span>
+              );
+            } else {
+              return <span key={index}>{text}</span>;
+            }
+          })}
+        </span>
       </div>
-      <div>
-        {descriptionSplitted.map((element, index) => {
-          return <p key={index}>{element}</p>;
-        })}
-      </div>
-      {props.ctaText.map((text, index) => {
-        if (index === props.highlightCtaTextIndex) {
-          return (
-            <span key={index} style={{ color: token.colorPrimary }}>
-              {text}
-            </span>
-          );
-        } else {
-          return <span key={index}>{text}</span>;
-        }
-      })}
-    </div>
+    </>
   );
 }
 
@@ -56,8 +70,9 @@ export default function ServiceSection() {
       description:
         'On s’occupe de tout sur votre location courte durée.\nMis en place de l’annonce, gestion des voyageurs, ménage des appartements, reparations et entretiens.\nGagnez plus d’argent et plus de tranquilité ! ',
       highlightCtaTextIndex: 0,
-      ctaText: ['25%', 'des loyers ( frais de ménage décomptés )'],
+      ctaText: ['20%', 'des loyers ( frais de ménage décomptés )'],
       image: '/manage.png',
+      className: styles.displayWithFade1,
     },
     {
       title: 'Sous-Location',
@@ -70,6 +85,7 @@ export default function ServiceSection() {
         'de vos loyers sans frais de gestion de notre part',
       ],
       image: '/sousloc.png',
+      className: styles.displayWithFade2,
     },
     {
       title: 'Accompagnement',
@@ -78,15 +94,31 @@ export default function ServiceSection() {
       highlightCtaTextIndex: -1,
       ctaText: ['Contactez-nous pour avoir un devis'],
       image: '/consulting.png',
+      className: styles.displayWithFade3,
     },
   ];
 
   return (
     <>
-      <Card marginTopPositionIgnored={true}>
-        <p>Quels sont nos services</p>
+      <Card
+        containerStyle={{
+          width: '80%',
+          marginTop: 0,
+          alignSelf: 'center',
+        }}
+        cardStyle={{
+          padding: 0,
+        }}
+      >
+        <p className={`${styles.alignCenter} ${global.sectionTitle}`}>
+          Quels sont nos services
+        </p>
       </Card>
-      <Card marginTopPositionIgnored={true}>
+      <Card
+        containerStyle={{
+          marginTop: 0,
+        }}
+      >
         <div className={styles.servicesContainer}>
           {services.map((service, index) => (
             <ServiceItem
@@ -96,6 +128,7 @@ export default function ServiceSection() {
               image={service.image}
               highlightCtaTextIndex={service.highlightCtaTextIndex}
               ctaText={service.ctaText}
+              className={service.className}
             />
           ))}
         </div>

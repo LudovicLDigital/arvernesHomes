@@ -1,6 +1,7 @@
 .section {
     display: flex;
     padding-bottom: 2rem;
+    margin-top: -2rem;
 }
 
 .cardContainer {
@@ -8,5 +9,6 @@
     flex: 1;
     margin-left: 1rem;
     margin-right: 1rem;
+    padding: 2rem;
     flex-direction: column;
 }
