@@ -5,29 +5,16 @@ on:
       - main
 
 jobs:
-  build-and-deploy:
+  web-deploy:
+    name: 🎉 Deploy
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v2
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v3
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          node-version: '16'
-
-      - name: Install Dependencies
-        run: npm install
-
-      - name: Install Dependencies CI
-        run: npm ci
-
-      - name: Build
-        run: npm run build
-
-      - name: FTP Deploy
-        run: node deploy.js
-        env:
-          FTP_USER: ${{ secrets.USERNAME }}
-          FTP_PASSWORD: ${{ secrets.PASSWORD }}
-          FTP_HOST: ${{ secrets.SERVER }}
+          server: ${{ secrets.SERVER }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
