@@ -28,3 +28,6 @@ jobs:
           server: ${{ secrets.SERVER }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
+          local-dir: ./build/
+          remote-dir: /public_html/
+          state-name: .state.json
