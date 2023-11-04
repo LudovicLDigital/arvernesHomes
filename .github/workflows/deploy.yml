@@ -29,5 +29,5 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           local-dir: ./build/
-          server-dir: /public_html/
+          server-dir: /domains/arverneshomes.com/public_html/
           state-name: .state.json
