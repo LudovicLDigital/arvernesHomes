@@ -1,0 +1,50 @@
+.innerContainer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+/* Ensure that the container cuts off any overflowing images */
+.imagesRower {
+    display: flex;
+    flex: 1;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    /* Hide the overflow on the x-axis */
+    overflow-x: hidden;
+    max-width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.imageContainer {
+    flex: 0 0 auto; /* Don't grow, don't shrink, base width on content */
+    max-width: 100%; /* Make sure the image does not exceed its container */
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    scroll-snap-align: start;
+}
+
+.images {
+    flex: 0 0 auto; /* Don't grow, don't shrink, base width on content */
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    scroll-snap-align: start; /* Snap align at the start */
+}
+/* Add padding at the end of the scroll to ensure the last item can align to the start */
+.imagesRower:after {
+    content: '';
+    flex: 0 0 1rem; /* Adjust the padding space as needed */
+}
+
+/* Media Query for tablets */
+@media (max-width: 768px) {
+    .imageContainer {
+        flex: 0 0 50%; /* Show 2 images at a time for tablets */
+    }
+}
+/* Media Query for mobile */
+@media (max-width: 480px) {
+    .imageContainer {
+        flex: 0 0 100%; /* Show 1 image at a time for mobile */
+    }
+}

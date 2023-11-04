@@ -22,9 +22,9 @@ function ServiceItem(props: ServiceItemProps) {
     <>
       {props.title !== 'Gestion complète' && <div className={styles.divider} />}
       <div
-        className={`${styles.alignCenter} ${styles.marginH} ${props.className}`}
+        className={`${global.alignColumCenter} ${styles.marginH} ${props.className}`}
       >
-        <div className={styles.alignCenter}>
+        <div className={global.alignColumCenter}>
           <Image
             src={props.image}
             alt={props.title}
@@ -40,7 +40,7 @@ function ServiceItem(props: ServiceItemProps) {
             return <p key={index}>{element}</p>;
           })}
         </div>
-        <span className={`${styles.alignCenter} ${styles.comText}`}>
+        <span className={`${global.alignColumCenter} ${styles.comText}`}>
           {props.ctaText.map((text, index) => {
             if (index === props.highlightCtaTextIndex) {
               return (
@@ -109,7 +109,7 @@ export default function ServiceSection() {
           padding: 0,
         }}
       >
-        <p className={`${styles.alignCenter} ${global.sectionTitle}`}>
+        <p className={`${global.alignColumCenter} ${global.sectionTitle}`}>
           Quels sont nos services
         </p>
       </Card>
