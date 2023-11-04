@@ -25,6 +25,7 @@
     justify-content: flex-end;
     padding-bottom: 2rem;
     width: 80%;
+    font-weight: bold;
 }
 .divider {
     width: 1px;
@@ -40,7 +41,10 @@
         margin-top: 1rem;
     }
     .divider {
-        display: none;
+        height: 1px;
+        width: 100%;
+        align-self: inherit;
+        margin: 0;
     }
 }
 .displayWithFade1, .displayWithFade2, .displayWithFade3 {

@@ -27,3 +27,19 @@
         height: 300px;
     }
 }
+@media (max-width: 500px) {
+    .logo {
+        width: 5rem;
+        height: 5rem;
+    }
+    .logoImage {
+        width: 100px;
+        height: 100px;
+    }
+
+    .contactButton {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+    }
+}

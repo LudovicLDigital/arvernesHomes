@@ -136,6 +136,11 @@
         flex: 1;
         flex-direction: column;
     }
+    .revenusContainer {
+        display: flex;
+        flex: 1;
+        align-items: center;
+    }
     .divider {
         display: none;
     }
