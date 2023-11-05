@@ -2,7 +2,7 @@ import styles from './datasection.module.css';
 import { Badge, Col, theme, Row } from 'antd';
 import { StarFilled } from '@ant-design/icons';
 import { Bubble, homeData } from '@/app/datas/HomeData';
-import Card from '@/app/components/common/Card';
+import { Card } from '@/app/components/common';
 
 const { useToken } = theme;
 type BubbleProps = {
