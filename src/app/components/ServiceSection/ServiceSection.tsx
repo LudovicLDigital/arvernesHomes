@@ -1,5 +1,5 @@
 import { theme } from 'antd';
-import Card from '@/app/components/common/Card';
+import { Card } from '@/app/components/common';
 import Image from 'next/image';
 import styles from './servicesection.module.css';
 import global from '@/app/page.module.css';

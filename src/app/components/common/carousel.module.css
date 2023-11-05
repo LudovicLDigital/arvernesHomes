@@ -1,0 +1,39 @@
+.innerContainer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
+
+.imageCarousel {
+    width: 85vw;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+.imageCarousel::-webkit-scrollbar {
+    display: none;
+}
+.imageContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 1s cubic-bezier(0.039, 0.575, 0.565, 1);
+}
+.images {
+    width: 30vw;
+    height: 30vw;
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+@media (max-width: 500px) {
+    .images {
+        width: 70vw;
+        height: 70vw;
+        margin-left: 2vw;
+        margin-right: 2vw;
+    }
+}
