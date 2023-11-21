@@ -6,6 +6,7 @@ import DataSection from '@/app/components/DataSection/DataSection';
 import BannerSection from '@/app/components/BannerSection/BannerSection';
 import ServiceSection from '@/app/components/ServiceSection/ServiceSection';
 import PropertiesSection from '@/app/components/PropertiesSection/PropertiesSection';
+import SocietySection from '@/app/components/SocietySection/SocietySection';
 
 export default function Home() {
   const [api, contextHolder] = notification.useNotification();
@@ -36,6 +37,7 @@ export default function Home() {
         {contextHolder}
         <BannerSection />
         <DataSection />
+        <SocietySection />
         <ServiceSection />
         <PropertiesSection />
       </main>
