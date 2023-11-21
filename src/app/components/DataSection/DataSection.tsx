@@ -42,7 +42,7 @@ export default function DataSection() {
               >
                 {homeData.lcdRentValue} € / Mois
               </span>
-              <p>
+              <p className={styles.lcdRentValue}>
                 {homeData.highestMonthRevenueTitle}
                 <span
                   style={{
@@ -52,7 +52,7 @@ export default function DataSection() {
                   {homeData.highestMonthRevenueValue} €
                 </span>
               </p>
-              <p>
+              <p className={styles.lcdRentValue}>
                 {homeData.lowestMonthRevenueTitle}
                 <span
                   style={{
