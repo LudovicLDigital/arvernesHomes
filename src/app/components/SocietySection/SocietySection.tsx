@@ -1,10 +1,7 @@
-import { theme } from 'antd';
 import { Card } from '@/app/components/common';
 import Image from 'next/image';
 import global from '@/app/page.module.css';
 import styles from './societysection.module.css';
-
-const { useToken } = theme;
 
 export default function SocietySection() {
   const cities = ['Vichy', 'Clermont-Ferrand', 'Roanne'];

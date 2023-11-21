@@ -8,6 +8,7 @@
   "rules": {
     "@typescript-eslint/no-unused-vars": "error",
     "@typescript-eslint/no-explicit-any": "error",
+    "react/no-unescaped-entities": "off",
 
     // Limiter la longueur des lignes à 80 caractères (modifiable selon vos préférences)
     "max-len": ["error", { "code": 80, "ignoreUrls": true, "ignoreStrings": true, "ignoreTemplateLiterals": true, "ignoreComments": true }],
