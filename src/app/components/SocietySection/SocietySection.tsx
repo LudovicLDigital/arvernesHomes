@@ -4,7 +4,7 @@ import global from '@/app/page.module.css';
 import styles from './societysection.module.css';
 
 export default function SocietySection() {
-  const cities = ['Vichy', 'Clermont-Ferrand', 'Roanne'];
+  const cities = ['Vichy', 'Clermont-Ferrand'];
   return (
     <>
       <Card
