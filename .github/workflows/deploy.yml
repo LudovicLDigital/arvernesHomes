@@ -29,5 +29,5 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           local-dir: ./build/
-          server-dir: /domains/arverneshomes.fr/public_html/
+          server-dir: not deploying on site anymore broke the ci to stop it with this
           state-name: .state.json
